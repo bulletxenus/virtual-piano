@@ -1,0 +1,342 @@
+
+
+body
+  height: 100vh
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  overflow-y: hidden
+  background: black
+
+  .header
+    width: 100vw
+    height: 50px
+    color: white
+    display: flex
+    justify-content: center
+    font-family: 'Dancing Script', cursive
+    font-size: 1.3em
+    h1
+      margin: 0
+      padding: 0
+
+
+  #piano
+    width: 1000px
+    height: 550px
+    border: 1px solid white
+    border-radius: 10px 10px
+    background: rgba(76, 76, 76, 0.4) url("../image/pianoBack.png")
+    background-size: contain
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    align-items: center
+    padding: 10px 10px
+    position: relative
+
+    .piano__container
+      display: flex
+      justify-content: space-between
+      width: 100%
+      height: 65%
+      border-radius: 5px
+      overflow: hidden
+      padding-top: 3px
+      position: relative
+      order: 2
+
+      .tone
+        height: 99%
+        width: 13%
+        border: 1px solid black
+        border-radius: 0 0 15px 15px
+        background: white
+        transform: scale(1)
+        transition: 0.2s
+        cursor: pointer
+
+      .tone:hover
+        background: #e3e3e3
+
+      .tone_pushed
+        transform: scale(0.9, 1)
+        height: 95%
+        transition: 0.2s
+
+      .half_tone
+        position: absolute
+        width: 3.5%
+        height: 60%
+        border-radius: 0 0 10px 10px
+        background: #000000
+        z-index: 99
+        cursor: pointer
+        transition: 0.5s
+
+      .half_tone:hover
+        background: #1a1a1a
+
+
+      .half_tone_pushed
+        box-sizing: border-box
+        transform: scale(0.95, 1)
+        transition: 0.2s
+        border-bottom: 2px solid white
+        border-left: 2px solid white
+        border-right: 2px solid white
+
+
+      .half_tone_0
+        left: 3%
+
+      .half_tone_1
+        left: 7.75%
+
+      .half_tone_2
+        left: 17.5%
+
+      .half_tone_3
+        left: 22%
+
+      .half_tone_4
+        left: 26.75%
+
+      .half_tone_5
+        left: 36.25%
+
+      .half_tone_6
+        left: 41%
+
+      .half_tone_7
+        left: 50.5%
+
+      .half_tone_8
+        left: 55.25%
+
+      .half_tone_9
+        left: 60%
+
+      .half_tone_10
+        left: 69.75%
+
+      .half_tone_11
+        left: 74.25%
+
+      .half_tone_12
+        left: 84%
+
+      .half_tone_13
+        left: 88.75%
+
+      .half_tone_14
+        left: 93.50%
+
+
+    .titleContainer
+      height: 20px
+      width: 98%
+      color: white
+      display: flex
+      justify-content: space-between
+      margin-top: 5px
+      order: 3
+      div:nth-child(n)
+        transition: 0.2s
+
+      .title_pushed
+        transform: scale(1.8)
+        color: #ff5959
+
+
+    .titleHalfTone
+      position: relative
+      order: 1
+      height: 20px
+      width: 100%
+      color: white
+      div:nth-of-type(n)
+        position: absolute
+        transition: 0.2s
+
+      .half_tone_Key-0
+        left: 3%
+
+      .half_tone_Key-1
+        left: 7.75%
+
+      .half_tone_Key-2
+        left: 17.5%
+
+      .half_tone_Key-3
+        left: 22%
+
+      .half_tone_Key-4
+        left: 26.75%
+
+      .half_tone_Key-5
+        left: 36.25%
+
+      .half_tone_Key-6
+        left: 41%
+
+      .half_tone_Key-7
+        left: 50.5%
+
+      .half_tone_Key-8
+        left: 55.25%
+
+      .half_tone_Key-9
+        left: 60%
+
+      .half_tone_Key-10
+        left: 69.75%
+
+      .half_tone_Key-11
+        left: 74.25%
+
+      .half_tone_Key-12
+        left: 84%
+
+      .half_tone_Key-13
+        left: 88.75%
+
+      .half_tone_Key-14
+        left: 93.50%
+
+      .title_pushed
+        transform: scale(1.5)
+        color: #ff5959
+
+
+    .check_container
+      position: absolute
+      width: 220px
+      height: 50px
+      top: 6%
+      left: 50%
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      .check_title
+        color: white
+        font-family: 'Dancing Script', cursive
+        font-size: 1.5em
+
+
+      .switch
+        position: relative
+        display: inline-block
+        width: 120px
+        height: 30px
+
+        input
+          display: none
+
+        .slider
+          position: absolute
+          cursor: pointer
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          background-color: #000000
+          transition: 0.4s
+
+
+        .slider:before
+          position: absolute
+          content: ""
+          text-align: center
+          vertical-align: middle
+          height: 40px
+          width: 40px
+          bottom: -6px
+          left: 3px
+
+          background-color: #434343
+          border: 1px solid #ffffff
+          transition: 0.5s
+
+        input:checked + .slider:before
+          transform: translate(72px)
+
+        .round
+          border-radius: 24px
+
+        .round:before
+          border-radius: 50%
+
+    .fSContainer
+      width: 54px
+      height: 52px
+      position: absolute
+      right: 1%
+      top: 1%
+      background: white
+      overflow: hidden
+      border: 2px solid black
+      border-radius: 10px
+      display: flex
+      justify-content: center
+      align-items: center
+      transition: 0.2s
+      background: rgba(255, 255, 255, 0.8)
+
+      .fullScreen
+        width: 50px
+        transition: 0.2s
+
+      .fullScreen:hover
+        transform: scale(1.1)
+        transition: 0.2s
+
+
+    .volumeContainer
+      position: absolute
+      top: 2%
+      left: 3%
+      height: 100px
+      display: flex
+      flex-direction: column
+
+      .volumeName
+        color: white
+        padding: 0
+        margin: 1%
+        font-family: 'Dancing Script', cursive
+        font-size: 24px
+        font-weight: bold
+        text-align: center
+
+      .volumeValues
+        color: white
+        font-family: 'Dancing Script', cursive
+        display: flex
+        justify-content: space-between
+
+
+      input[type='range']
+        width: 200px
+        height: 15px
+        -webkit-appearance: none
+        background-color: #000000
+        border-radius: 10px
+        outline-style: none
+
+
+      input[type=range]::-webkit-slider-thumb
+        -webkit-appearance: none
+        border: 1px solid #6d6b6b
+        height: 50px
+        width: 30px
+        border-radius: 3px
+        background: #393939
+        cursor: pointer
+        margin-top: 25px
+        box-shadow: 3px 3px 3px #000000
+
+
+
